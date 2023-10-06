@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="shortcut icon" href="./assets/images/icon.png" type="image/png">
+        <title>Placeholer</title>
+
+        <link rel="stylesheet" href="./css/master.css">
+
+        <script src="/uv/uv.bundle.js" charset="UTF-8"></script>
+        <script src="/uv/uv.config.js"></script>
+        <script src="./js/preload.js"></script>
+        <meta name="cf-2fa-verify" content="pwYj7jHuZ4L3C1yMqP3c"> <!-- cloudflare verification -->
+    </head>
+
+    <body theme="main">
+
+      <nav>
+        <div class="logo">
+          <img src="./assets/images/icon.png" alt="Logo" draggable="false" />
+          <h1>Placeholer</h1>
+        </div>
+    
+        <p id="time"></p>
+    
+          <div class="navitems">
+            <div class="navitem"><a selected href="/index2.html">Home</a></div>
+              <div class="navitem"><a selected href="/movies.html">Movies</a></div>
+            <div class="navitem"><a href="/search.html">Search</a></div>
+              <div class="navitem"><a href="/placeholer.html">Search2</a></div>
+        </div>
+      </nav>
+
+      <div class="center-container">
+        <h1>Welcome to <span>Placeholer</span></h1>
+        <p id="splash"></p>
+        <br>
+        <button onclick="launchab()" id="launchab" class="button play">Launch in about:blank</button>
+      </div>
+
+      
+
+      <div class="links">
+        <div class="left">
+          <a href="https://github.com/art-class/v4">GitHub</a>
+        </div>
+        
+        <div class="right">
+          <a href="./settings.html">Settings</a>
+          <a href="./about.html">About</a>
+        </div>
+      </div>
+
+    </body>
+
+    <script>
+      fetch('./assets/data/splash.json')
+        .then(res => res.json())
+        .then(data => {
+          document.querySelector("#splash").innerHTML = data[Math.floor(Math.random() * data.length)]
+        })
+
+     
+    </script>
+
+    <script src="./js/index.js"></script>
+</html>
